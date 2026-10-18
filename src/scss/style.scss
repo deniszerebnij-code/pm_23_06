@@ -1,6 +1,6 @@
-$main-color: #1e3a8a;
-$bg-color: #f8fafc;
-$text-color: #334155;
+$bg-color: #ffffff;
+$text-color: #111111;
+$content-bg: #f8fafc;
 
 body {
     margin: 0;
@@ -10,29 +10,36 @@ body {
     text-align: center;
 }
 
-<header>
-    <h1>Лабораторна робота №1</h1>
-</header>
-
-.content {
-    padding: 40px 20px;
-
-    .hero-img {
-        max-width: 500px;
-        height: auto;
-        border-radius: 12px;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+header {
+    padding: 20px;
+    background-color: #e00000;
+    color: #ffffff;
+    
+    h1 {
+        margin: 0;
+        color: #ffffff;
     }
 
-    p {
-        font-size: 1.1rem;
-        margin: 0;
+    nav {
+        margin-top: 10px;
+        
+        a {
+            color: #38bdf8; 
+            text-decoration: underline;
+            margin: 0 10px;
+        }
     }
 }
 
-footer {
-    padding: 15px;
-    font-size: 0.9rem;
-    color: #64748b;
+.content {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: $content-bg;
+    border: 2px solid #0f172a; 
+    
+    h2 {
+        margin-top: 0;
+        color: #0f172a;
+    }
 }
