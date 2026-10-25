@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/deniszerebnij-code/pm_23_06#readme",
   "devDependencies": {
+    "bootstrap": "^5.3.8",
     "browser-sync": "^3.0.4",
     "gulp": "^5.0.1",
     "gulp-clean-css": "^4.3.0",

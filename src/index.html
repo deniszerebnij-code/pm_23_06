@@ -3,19 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лабораторна робота №1</title>
+    <title>Резюме - Лабораторна робота 2</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    @@include('components/header.html')
-
-    <main class="content">
-        <h2>Лабораторна робота №1</h2>
-        <img src="imgs/logo.jpg" alt="Зображення" class="hero-img">
-    </main>
-
-    @@include('components/footer.html')
-
+    <div class="container mt-5 mb-5">
+        <div class="row">
+            <aside class="col-md-4">
+                <div class="card mb-4 border-primary">
+                    <div class="card-body text-center">
+                        <h2 class="card-title h4">Robert J. Belvin</h2>
+                        <p class="card-text text-muted">Graphic & Web Designer</p>
+                        <button class="btn btn-primary btn-sm w-100">Download CV</button>
+                    </div>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header bg-dark text-white">Contact Me</div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><strong>Tel:</strong> +1-718-310-5588</li>
+                        <li class="list-group-item"><strong>Email:</strong> www.yourwebsite.com</li>
+                        <li class="list-group-item"><strong>Address:</strong> 769 Prudence Lincoln Park, MI</li>
+                    </ul>
+                </div>
+                <div class="card mb-4">
+                    <div class="card-header bg-secondary text-white">Skills & Languages</div>
+                    <div class="card-body">
+                        <h5 class="h6">Skills</h5>
+                        <div class="mb-3">
+                            <span class="badge bg-info text-dark">HTML-5/CSS-3</span>
+                            <span class="badge bg-info text-dark">Adobe Photoshop</span>
+                            <span class="badge bg-info text-dark">Adobe Illustrator</span>
+                            <span class="badge bg-info text-dark">Microsoft Word</span>
+                        </div>
+                        <h5 class="h6">Languages</h5>
+                        <ul class="list-unstyled mb-0">
+                            <li>English</li>
+                            <li>Spanish</li>
+                            <li>French</li>
+                            <li>German</li>
+                        </ul>
+                    </div>
+                </div>
+            </aside>
+            <main class="col-md-8">
+                <section class="mb-5">
+                    <h3 class="border-bottom border-2 border-dark pb-2 mb-3">About me</h3>
+                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+                </section>
+                <section class="mb-5">
+                    <h3 class="border-bottom border-2 border-dark pb-2 mb-4">Job Experience</h3>
+                    <div class="card border-0 mb-3 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title h5">Senior Web Designer <span class="badge bg-success float-end">2020 - Present</span></h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Creative Agency / Chicago</h6>
+                            <p class="card-text">Lorem Ipsum has been the industry's standard dummy text ever since 1500s, when unknown printer took a galley of type.</p>
+                        </div>
+                    </div>
+                    <div class="card border-0 mb-3 shadow-sm">
+                        <div class="card-body">
+                            <h4 class="card-title h5">Graphic Designer <span class="badge bg-secondary float-end">2015 - 2020</span></h4>
+                            <h6 class="card-subtitle mb-2 text-muted">Creative Market / Chicago</h6>
+                            <p class="card-text">Lorem Ipsum has been the industry's standard dummy text ever since 1500s, when unknown printer took a galley of type.</p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <h3 class="border-bottom border-2 border-dark pb-2 mb-4">Education</h3>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="p-3 border rounded bg-light">
+                                <h5 class="h6 text-primary">Master Degree Graduate</h5>
+                                <p class="mb-1"><strong>Stanford University</strong></p>
+                                <small class="text-muted">2011 - 2013</small>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="p-3 border rounded bg-light">
+                                <h5 class="h6 text-primary">Bachelor Degree Graduate</h5>
+                                <p class="mb-1"><strong>University of Chicago</strong></p>
+                                <small class="text-muted">2007 - 2010</small>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </main>
+        </div>
+    </div>
+    <script src="js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>
