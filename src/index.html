@@ -1,96 +1,327 @@
 <!DOCTYPE html>
-<html lang="uk">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Резюме - Лабораторна робота 2</title>
+    <meta name="description" content="Noel Taylor resume">
+    <title>Noel Taylor — Resume</title>
+
+    <!-- Bootstrap підключається перед власними стилями -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div class="container mt-5 mb-5">
-        <div class="row">
-            <aside class="col-md-4">
-                <div class="card mb-4 border-primary">
-                    <div class="card-body text-center">
-                        <h2 class="card-title h4">Robert J. Belvin</h2>
-                        <p class="card-text text-muted">Graphic & Web Designer</p>
-                        <button class="btn btn-primary btn-sm w-100">Download CV</button>
-                    </div>
+    <div class="resume-frame">
+        <div class="row g-0 resume-layout">
+
+            <aside class="col-12 col-lg-5 sidebar">
+
+                <header class="profile-header">
+                    <h1 class="profile-name">DENYS ZHEREBNYI</h1>
+                    <p class="profile-role">
+                        APPLIED MATHEMATICS STUDENT
+                    </p>
+                </header>
+
+                <div class="portrait-placeholder d-flex
+                            align-items-center justify-content-center
+                            text-white fw-bold fs-1"
+                     role="img"
+                     aria-label="Denys Zherebnyi">
+                    DZ
                 </div>
-                <div class="card mb-4">
-                    <div class="card-header bg-dark text-white">Contact Me</div>
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item"><strong>Tel:</strong> +1-718-310-5588</li>
-                        <li class="list-group-item"><strong>Email:</strong> www.yourwebsite.com</li>
-                        <li class="list-group-item"><strong>Address:</strong> 769 Prudence Lincoln Park, MI</li>
+
+                <section class="sidebar-section"
+                         aria-labelledby="contact">
+                    <h2 class="section-heading" id="contact">
+                        <span class="section-icon">●</span>
+                        CONTACT
+                    </h2>
+
+                    <ul class="list-unstyled contact-list">
+                        <li>
+                            <a href="tel:+380682613041">
+                                +380 68 261 30 41
+                            </a>
+                        </li>
+                        <li>
+                            <a href="mailto:deniszerebnij@gmail.com">
+                                deniszerebnij@gmail.com
+                            </a>
+                        </li>
+                        <li>Lviv, Ukraine</li>
+                        <li>
+                            <a href="https://github.com/deniszerebnij-code"
+                               target="_blank"
+                               rel="noopener noreferrer">
+                                GitHub Profile
+                            </a>
+                        </li>
                     </ul>
-                </div>
-                <div class="card mb-4">
-                    <div class="card-header bg-secondary text-white">Skills & Languages</div>
-                    <div class="card-body">
-                        <h5 class="h6">Skills</h5>
-                        <div class="mb-3">
-                            <span class="badge bg-info text-dark">HTML-5/CSS-3</span>
-                            <span class="badge bg-info text-dark">Adobe Photoshop</span>
-                            <span class="badge bg-info text-dark">Adobe Illustrator</span>
-                            <span class="badge bg-info text-dark">Microsoft Word</span>
-                        </div>
-                        <h5 class="h6">Languages</h5>
-                        <ul class="list-unstyled mb-0">
-                            <li>English</li>
-                            <li>Spanish</li>
-                            <li>French</li>
-                            <li>German</li>
-                        </ul>
-                    </div>
-                </div>
+                </section>
+
+                <section class="sidebar-section"
+                         aria-labelledby="education">
+                    <h2 class="section-heading" id="education">
+                        <span class="section-icon">◆</span>
+                        EDUCATION
+                    </h2>
+
+                    <article class="education-item">
+                        <h3>LVIV POLYTECHNIC NATIONAL UNIVERSITY</h3>
+                        <p>Applied Mathematics and Informatics</p>
+                        <p>2025 – Present</p>
+                        <p>Expected graduation: 2029</p>
+                    </article>
+                </section>
+
+                <section class="sidebar-section"
+                         aria-labelledby="courses">
+                    <h2 class="section-heading" id="courses">
+                        <span class="section-icon">◆</span>
+                        COURSES
+                    </h2>
+
+                    <article class="education-item">
+                        <h3>PYTHON PROGRAMMING</h3>
+                        <p>Genius Space · 2025</p>
+                    </article>
+
+                    <article class="education-item">
+                        <h3>ADVANCED EXCEL: FROM A TO Z</h3>
+                        <p>Genius Space · 2026</p>
+                    </article>
+
+                    <article class="education-item">
+                        <h3>FINANCIAL ACCOUNTING FOR LLC</h3>
+                        <p>Genius Space · 2026</p>
+                    </article>
+
+                    <article class="education-item">
+                        <h3>DEVOPS FACTORY TRAINING PROGRAM</h3>
+                        <p>SoftServe Academy · June–August 2026</p>
+                    </article>
+                </section>
+
+                <section class="sidebar-section"
+                         aria-labelledby="languages">
+                    <h2 class="section-heading" id="languages">
+                        <span class="section-icon">◎</span>
+                        LANGUAGES
+                    </h2>
+
+                    <ul class="list-unstyled dot-list">
+                        <li>UKRAINIAN — NATIVE</li>
+                        <li>ENGLISH — INTERMEDIATE</li>
+                    </ul>
+                </section>
+
             </aside>
-            <main class="col-md-8">
-                <section class="mb-5">
-                    <h3 class="border-bottom border-2 border-dark pb-2 mb-3">About me</h3>
-                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
+
+            <main class="col-12 col-lg-7 main-content">
+
+                <section class="content-section"
+                         aria-labelledby="about">
+                    <h2 class="section-heading" id="about">
+                        <span class="section-icon">●</span>
+                        ABOUT ME
+                    </h2>
+
+                    <p class="about-text">
+                        I am an Applied Mathematics student at Lviv
+                        Polytechnic National University with practical
+                        experience in Python, C++, Linux and computer
+                        networking. I am interested in cybersecurity,
+                        system administration and automation.
+                        I enjoy solving logical problems, analyzing data
+                        and learning new technologies. I am looking for
+                        opportunities to develop my technical skills
+                        and gain practical experience in IT.
+                    </p>
                 </section>
-                <section class="mb-5">
-                    <h3 class="border-bottom border-2 border-dark pb-2 mb-4">Job Experience</h3>
-                    <div class="card border-0 mb-3 shadow-sm">
-                        <div class="card-body">
-                            <h4 class="card-title h5">Senior Web Designer <span class="badge bg-success float-end">2020 - Present</span></h4>
-                            <h6 class="card-subtitle mb-2 text-muted">Creative Agency / Chicago</h6>
-                            <p class="card-text">Lorem Ipsum has been the industry's standard dummy text ever since 1500s, when unknown printer took a galley of type.</p>
+
+                <section class="content-section"
+                         aria-labelledby="experience">
+                    <h2 class="section-heading" id="experience">
+                        <span class="section-icon">◆</span>
+                        EXPERIENCE
+                    </h2>
+
+                    <article class="experience-item">
+                        <div class="experience-title-row">
+                            <h3>ACADEMIC PRACTICE</h3>
+                            <span class="experience-date">
+                                2025 – Present
+                            </span>
                         </div>
-                    </div>
-                    <div class="card border-0 mb-3 shadow-sm">
-                        <div class="card-body">
-                            <h4 class="card-title h5">Graphic Designer <span class="badge bg-secondary float-end">2015 - 2020</span></h4>
-                            <h6 class="card-subtitle mb-2 text-muted">Creative Market / Chicago</h6>
-                            <p class="card-text">Lorem Ipsum has been the industry's standard dummy text ever since 1500s, when unknown printer took a galley of type.</p>
+
+                        <p class="experience-place">
+                            Lviv Polytechnic National University
+                        </p>
+
+                        <p class="experience-description">
+                            Developed data processing and calculation
+                            models using Python and C++. Worked with
+                            structured data, statistical estimation,
+                            logical operations and algorithmic problems.
+                            Used the Linux command line during academic
+                            projects.
+                        </p>
+                    </article>
+
+                    <article class="experience-item">
+                        <div class="experience-title-row">
+                            <h3>TEAMWORK JAM PARTICIPANT</h3>
+                            <span class="experience-date">
+                                December 2025
+                            </span>
                         </div>
-                    </div>
+
+                        <p class="experience-place">
+                            SoftServe · Lviv
+                        </p>
+
+                        <p class="experience-description">
+                            Participated in a soft skills intensive.
+                            Practiced teamwork, completed group tasks
+                            and communicated with IT specialists.
+                        </p>
+                    </article>
                 </section>
-                <section>
-                    <h3 class="border-bottom border-2 border-dark pb-2 mb-4">Education</h3>
-                    <div class="row">
-                        <div class="col-md-6 mb-3">
-                            <div class="p-3 border rounded bg-light">
-                                <h5 class="h6 text-primary">Master Degree Graduate</h5>
-                                <p class="mb-1"><strong>Stanford University</strong></p>
-                                <small class="text-muted">2011 - 2013</small>
+
+                <section class="content-section"
+                         aria-labelledby="skills">
+                    <h2 class="section-heading" id="skills">
+                        <span class="section-icon">◉</span>
+                        TECHNICAL SKILLS
+                    </h2>
+
+                    <div class="row row-cols-1 row-cols-md-2 g-3">
+
+                        <div class="col">
+                            <div class="card h-100 border-0 bg-light">
+                                <div class="card-body">
+                                    <h3 class="card-title h6 fw-bold">
+                                        Programming
+                                    </h3>
+                                    <p class="card-text">
+                                        Python, C++, basic SQL
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="col-md-6 mb-3">
-                            <div class="p-3 border rounded bg-light">
-                                <h5 class="h6 text-primary">Bachelor Degree Graduate</h5>
-                                <p class="mb-1"><strong>University of Chicago</strong></p>
-                                <small class="text-muted">2007 - 2010</small>
+
+                        <div class="col">
+                            <div class="card h-100 border-0 bg-light">
+                                <div class="card-body">
+                                    <h3 class="card-title h6 fw-bold">
+                                        Operating Systems
+                                    </h3>
+                                    <p class="card-text">
+                                        Windows, Linux/UNIX,
+                                        command line
+                                    </p>
+                                </div>
                             </div>
                         </div>
+
+                        <div class="col">
+                            <div class="card h-100 border-0 bg-light">
+                                <div class="card-body">
+                                    <h3 class="card-title h6 fw-bold">
+                                        Computer Networks
+                                    </h3>
+                                    <p class="card-text">
+                                        TCP/IP, VLAN, OSI Model
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 border-0 bg-light">
+                                <div class="card-body">
+                                    <h3 class="card-title h6 fw-bold">
+                                        Cybersecurity
+                                    </h3>
+                                    <p class="card-text">
+                                        OWASP Top 10,
+                                        web application security basics
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col">
+                            <div class="card h-100 border-0 bg-light">
+                                <div class="card-body">
+                                    <h3 class="card-title h6 fw-bold">
+                                        Data and Office Tools
+                                    </h3>
+                                    <p class="card-text">
+                                        Advanced Excel,
+                                        data analysis
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </section>
+
+                <section class="content-section"
+                         aria-labelledby="soft-skills">
+                    <h2 class="section-heading" id="soft-skills">
+                        <span class="section-icon">●</span>
+                        SOFT SKILLS
+                    </h2>
+
+                    <div class="d-flex flex-wrap gap-2">
+                        <span class="badge text-bg-light border">
+                            Analytical Thinking
+                        </span>
+                        <span class="badge text-bg-light border">
+                            Problem Solving
+                        </span>
+                        <span class="badge text-bg-light border">
+                            Attention to Detail
+                        </span>
+                        <span class="badge text-bg-light border">
+                            Time Management
+                        </span>
+                        <span class="badge text-bg-light border">
+                            Teamwork
+                        </span>
+                        <span class="badge text-bg-light border">
+                            Fast Learning
+                        </span>
+                    </div>
+                </section>
+
+                <div class="row g-4 bottom-sections">
+
+                    <section class="col-12"
+                             aria-labelledby="interests">
+                        <h2 class="section-heading" id="interests">
+                            <span class="section-icon">✦</span>
+                            INTERESTS
+                        </h2>
+
+                        <ul class="list-unstyled dot-list">
+                            <li>CYBERSECURITY</li>
+                            <li>SYSTEM ADMINISTRATION</li>
+                            <li>IT AUTOMATION</li>
+                            <li>DATA ANALYSIS</li>
+                        </ul>
+                    </section>
+
+                </div>
+
             </main>
         </div>
     </div>
-    <script src="js/bootstrap.min.js"></script>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

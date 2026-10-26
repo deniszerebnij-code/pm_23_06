@@ -66,5 +66,17 @@ const bootstrap = parallel(bootstrapCss, bootstrapJs);
 const build = parallel(htmlTask, scssTask, jsTask, imagesTask, bootstrap);
 const serve = parallel(browserSyncServe, watchTask);
 
+function bootstrapCssTask() {
+    return src('node_modules/bootstrap/dist/css/bootstrap.min.css')
+        .pipe(dest('dist/css'));
+}
+
+function bootstrapJsTask() {
+    return src('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')
+        .pipe(dest('dist/js'));
+}
+
+exports.bootstrapCss = bootstrapCssTask;
+exports.bootstrapJs = bootstrapJsTask;
 exports.bootstrap = bootstrap;
 exports.default = series(build, serve);
