@@ -1,0 +1,23 @@
+.profile-header {
+  text-align: center;
+
+  .profile-name {
+    margin: 0;
+    font-size: clamp(1.7rem, 2.4vw, 2.8rem);
+    font-weight: 800;
+    letter-spacing: 1px;
+    line-height: 1.15;
+    white-space: nowrap;
+  }
+
+  .profile-role { margin: 5px 0 0; font-size: 1rem; letter-spacing: 1px; }
+}
+
+.portrait-placeholder {
+  width: min(100%, 230px);
+  aspect-ratio: 1;
+  margin: 44px auto 48px;
+  border: 10px solid #fff;
+  border-radius: 50%;
+  background: #aaa;
+}

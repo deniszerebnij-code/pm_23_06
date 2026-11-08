@@ -1,0 +1,9 @@
+@mixin section-divider($space: 30px) {
+  margin-bottom: $space + 4px;
+  padding-bottom: $space;
+  border-bottom: 1px solid $line-color;
+}
+
+@mixin narrow-screen($max-width) {
+  @media (max-width: $max-width) { @content; }
+}

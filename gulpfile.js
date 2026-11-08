@@ -1,82 +1,76 @@
 const { src, dest, watch, series, parallel } = require('gulp');
-const gulp = require('gulp');
-const fileinclude = require('gulp-file-include');
+const fileInclude = require('gulp-file-include');
 const sass = require('gulp-sass')(require('sass'));
 const cleanCSS = require('gulp-clean-css');
+const concat = require('gulp-concat');
 const uglify = require('gulp-uglify');
 const imagemin = require('gulp-imagemin');
 const browserSync = require('browser-sync').create();
 
+function cleanTask(done) {
+  require('node:fs').rmSync('dist', { recursive: true, force: true });
+  done();
+}
+
 function htmlTask() {
-    return src('src/*.html')
-        .pipe(fileinclude())
-        .pipe(dest('dist'))
-        .pipe(browserSync.stream());
+  return src('src/app/index.html')
+    .pipe(fileInclude({ basepath: 'src/app' }))
+    .pipe(dest('dist'))
+    .pipe(browserSync.stream());
 }
 
 function scssTask() {
-    return src('src/scss/style.scss')
-        .pipe(sass().on('error', sass.logError))
-        .pipe(cleanCSS())
-        .pipe(dest('dist/css'))
-        .pipe(browserSync.stream());
+  return src('src/scss/main.scss')
+    .pipe(sass())
+    .pipe(cleanCSS())
+    .pipe(concat('index.min.css'))
+    .pipe(dest('dist/css'))
+    .pipe(browserSync.stream());
 }
 
 function jsTask() {
-    return src('src/js/main.js')
-        .pipe(uglify())
-        .pipe(dest('dist/js'))
-        .pipe(browserSync.stream());
+  return src('src/js/**/*.js', { allowEmpty: true })
+    .pipe(concat('index.min.js'))
+    .pipe(uglify())
+    .pipe(dest('dist/js'))
+    .pipe(browserSync.stream());
 }
 
 function imagesTask() {
-    return src('src/imgs/**/*', { encoding: false })
-        .pipe(imagemin())
-        .pipe(dest('dist/imgs'));
+  return src('src/imgs/**/*', { encoding: false, allowEmpty: true })
+    .pipe(imagemin())
+    .pipe(dest('dist/imgs'));
 }
-
-function bootstrapCss() {
-    return src('node_modules/bootstrap/dist/css/bootstrap.min.css')
-        .pipe(dest('dist/css'));
-}
-
-function bootstrapJs() {
-    return src('node_modules/bootstrap/dist/js/bootstrap.min.js')
-        .pipe(dest('dist/js'));
-}
-
-function browserSyncServe() {
-    browserSync.init({
-        server: {
-            baseDir: './dist'
-        },
-        port: 3000,
-        notify: false
-    });
-}
-
-function watchTask() {
-    watch('src/**/*.html', htmlTask);
-    watch('src/scss/**/*.scss', scssTask);
-    watch('src/js/**/*.js', jsTask);
-    watch('src/imgs/**/*', imagesTask);
-}
-
-const bootstrap = parallel(bootstrapCss, bootstrapJs);
-const build = parallel(htmlTask, scssTask, jsTask, imagesTask, bootstrap);
-const serve = parallel(browserSyncServe, watchTask);
 
 function bootstrapCssTask() {
-    return src('node_modules/bootstrap/dist/css/bootstrap.min.css')
-        .pipe(dest('dist/css'));
+  return src('node_modules/bootstrap/dist/css/bootstrap.min.css').pipe(dest('dist/css'));
 }
 
 function bootstrapJsTask() {
-    return src('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js')
-        .pipe(dest('dist/js'));
+  return src('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js').pipe(dest('dist/js'));
 }
 
+function browserSyncServe(done) {
+  browserSync.init({ server: { baseDir: './dist' }, port: 3000, notify: false }, done);
+}
+
+function watchTask() {
+  watch('src/app/**/*.html', htmlTask);
+  watch('src/scss/**/*.scss', scssTask);
+  watch('src/js/**/*.js', jsTask);
+  watch('src/imgs/**/*', imagesTask);
+}
+
+const buildTasks = parallel(htmlTask, scssTask, jsTask, imagesTask, parallel(bootstrapCssTask, bootstrapJsTask));
+const build = series(cleanTask, buildTasks);
+const serve = series(build, parallel(browserSyncServe, watchTask));
+
+exports.clean = cleanTask;
+exports.html = htmlTask;
+exports.styles = scssTask;
+exports.scripts = jsTask;
+exports.images = imagesTask;
 exports.bootstrapCss = bootstrapCssTask;
 exports.bootstrapJs = bootstrapJsTask;
-exports.bootstrap = bootstrap;
-exports.default = series(build, serve);
+exports.build = build;
+exports.default = serve;

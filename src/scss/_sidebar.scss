@@ -1,0 +1,31 @@
+.sidebar {
+  padding: 54px 48px 48px 30px;
+  border-right: 1px solid $line-color;
+  background: linear-gradient(to right, $sidebar-bg calc(100% - 28px), #fff calc(100% - 28px));
+
+  .section-heading { justify-content: center; }
+
+  .sidebar-section {
+    @include section-divider();
+    text-align: center;
+
+    &:last-child { margin-bottom: 0; padding-bottom: 0; border-bottom: 0; }
+  }
+
+  .contact-list {
+    display: inline-block;
+    max-width: 100%;
+    margin-bottom: 0;
+    text-align: left;
+
+    li { margin: 5px 0; overflow-wrap: anywhere; }
+    a { color: inherit; text-decoration: none; &:hover { color: $accent; text-decoration: underline; } }
+  }
+
+  .education-item {
+    margin-bottom: 22px;
+    &:last-child { margin-bottom: 0; }
+    h3 { margin: 0 0 5px; font-size: 1rem; font-weight: 800; line-height: 1.4; }
+    p { margin: 3px 0; font-size: .91rem; }
+  }
+}

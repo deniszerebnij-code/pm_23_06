@@ -1,0 +1,20 @@
+@import "variables";
+@import "mixins";
+@import "base";
+@import "header";
+@import "sidebar";
+@import "content";
+@import "footer";
+
+@include narrow-screen(991.98px) {
+  .resume-frame { width: calc(100% - 24px); margin: 12px auto; padding: 0 16px; }
+  .sidebar { padding: 35px 25px; border-right: 0; border-bottom: 1px solid $line-color; background: $sidebar-bg; }
+  .main-content { padding: 35px 20px; }
+  .profile-name { white-space: normal; }
+}
+
+@include narrow-screen(575.98px) {
+  .resume-frame { width: 100%; margin: 0; padding: 0; }
+  .sidebar, .main-content { padding: 28px 18px; }
+  .experience-title-row { align-items: flex-start !important; flex-direction: column; gap: 2px !important; }
+}

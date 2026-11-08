@@ -1,0 +1,21 @@
+.main-content {
+  padding: 54px 30px 50px 42px;
+
+  .section-heading { margin-bottom: 24px; }
+  .content-section { @include section-divider(); }
+  .about-text { margin: 0; font-size: .98rem; line-height: 1.7; text-align: justify; }
+
+  .experience-item {
+    margin-bottom: 25px;
+    &:last-child { margin-bottom: 0; }
+    .experience-title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; }
+    h3 { margin: 0 0 5px; font-size: 1rem; font-weight: 800; line-height: 1.4; }
+    .experience-date { flex-shrink: 0; font-size: .9rem; font-weight: 600; white-space: nowrap; }
+    .experience-place { margin: 1px 0 10px; font-size: .94rem; font-style: italic; }
+    .experience-description { margin: 0; font-size: .91rem; line-height: 1.6; }
+  }
+
+  .bottom-sections .section-heading { gap: 10px; margin-bottom: 20px; font-size: clamp(1.1rem, 1.5vw, 1.7rem); }
+}
+
+.skill-card { @extend .content-section; }
