@@ -38,7 +38,7 @@ function jsTask() {
 
 function imagesTask() {
   return src('src/imgs/**/*', { encoding: false, allowEmpty: true })
-    .pipe(imagemin())
+    .pipe(imagemin([imagemin.gifsicle(), imagemin.optipng(), imagemin.svgo()]))
     .pipe(dest('dist/imgs'));
 }
 
